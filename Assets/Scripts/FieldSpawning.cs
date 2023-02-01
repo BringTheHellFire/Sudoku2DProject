@@ -18,7 +18,6 @@ public class FieldSpawning : MonoBehaviour
 
     [SerializeField] private Button InformationButton;
 
-    // Start is called before the first frame update
     void Start()
     {
         CreateFields();

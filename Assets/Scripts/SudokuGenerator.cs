@@ -151,13 +151,13 @@ public class SudokuGenerator
 
         List<Tuple<int,int>> values = GetValues();
 
-        int EndValueIndex = 50;
-        if (GameSettings.DifficultySetting == 1) { EndValueIndex = 71; }
-        if (GameSettings.DifficultySetting == 2) { EndValueIndex = 61; }
+        int FilledFields = 51;
+        if (GameSettings.DifficultySetting == 1) { FilledFields = 71; }
+        if (GameSettings.DifficultySetting == 2) { FilledFields = 61; }
 
-        bool isFinish = false;
+        bool isDone = false;
 
-        while (!isFinish)
+        while (!isDone)
         {
             int index = UnityEngine.Random.Range(0, values.Count);
             var searchedIndex = values[index];
@@ -170,9 +170,9 @@ public class SudokuGenerator
                 newSudokuObject = nextSudokuObject;
             }
             values.RemoveAt(index);
-            if (values.Count < EndValueIndex)
+            if (values.Count < FilledFields)
             {
-                isFinish = true;
+                isDone = true;
             }
             
         }
