@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class GameSettings
 {
-    public static int DifficultySetting = 0;
+    public static int DifficultySetting = 3;
 }

@@ -22,22 +22,22 @@ public class SudokuGenerator
     public static void FillRandomGroups(SudokuObject sudokuObject)
     {
         List<int> values = new List<int>() { 0, 1, 2 };
+        for (int i = 1; i <= 3; i++)
+        {
+            FillSelectedGroupInRow(sudokuObject, values, i);
+        }
+    }
 
+    private static void FillSelectedGroupInRow(SudokuObject sudokuObject, List<int> values, int row)
+    {
         int index = UnityEngine.Random.Range(0, values.Count);
-        FillSelectedGroup(sudokuObject, 1 + values[index]);
-        values.RemoveAt(index);
-
-        index = UnityEngine.Random.Range(0, values.Count);
-        FillSelectedGroup(sudokuObject, 4 + values[index]);
-        values.RemoveAt(index);
-
-        index = UnityEngine.Random.Range(0, values.Count);
-        FillSelectedGroup(sudokuObject, 7 + values[index]);
+        FillSelectedGroup(sudokuObject, 1+(row-1)*3 + values[index]);
         values.RemoveAt(index);
     }
+
     public static void FillSelectedGroup(SudokuObject sudokuObject, int group)
     {
-        sudokuObject.GetGroupIndex(group, out int startRow, out int startColumn);
+        sudokuObject.GroupToCoords(group, out int startRow, out int startColumn);
         List<int> values = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         for (int row = startRow; row < startRow + 3; row++)
         {
@@ -151,10 +151,11 @@ public class SudokuGenerator
 
         List<Tuple<int,int>> values = GetValues();
 
-        int FilledFields = 51;
+        int FilledFields = Mathf.Max(81 - GameSettings.DifficultySetting * 10,0);
+        /*
         if (GameSettings.DifficultySetting == 1) { FilledFields = 71; }
         if (GameSettings.DifficultySetting == 2) { FilledFields = 61; }
-
+        */
         bool isDone = false;
 
         while (!isDone)

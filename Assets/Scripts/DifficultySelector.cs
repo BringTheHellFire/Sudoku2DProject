@@ -2,29 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class DifficultySelector : MonoBehaviour
 {
-    [SerializeField] private Button EasyButton;
-    [SerializeField] private Button MediumButton;
-    [SerializeField] private Button HardButton;
+    [SerializeField] private string sceneName;
+    [SerializeField] private int difficulty;
 
-    public void EasyMode_ClickOn()
+    public void SelectDifficulty_OnClick()
     {
-        SceneManager.LoadScene("SudokuLevel");
-        GameSettings.DifficultySetting = 1;
-    }
-
-    public void MediumMode_ClickOn()
-    {
-        SceneManager.LoadScene("SudokuLevel");
-        GameSettings.DifficultySetting = 2;
-    }
-
-    public void HardMode_ClickOn()
-    {
-        SceneManager.LoadScene("SudokuLevel");
-        GameSettings.DifficultySetting = 3;
+        GameSettings.DifficultySetting = difficulty;
+        SceneManager.LoadScene(sceneName);
     }
 }

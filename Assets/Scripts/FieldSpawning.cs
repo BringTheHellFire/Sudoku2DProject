@@ -71,19 +71,17 @@ public class FieldSpawning : MonoBehaviour
         {
             GameObject instance = Instantiate(NumberFieldPrefab, NumberFieldPanel.transform);
             instance.GetComponentInChildren<TMP_Text>().text = (i + 1).ToString();
-            NumberField numberField = new NumberField();
-            numberField.number = i + 1;
-
-            instance.GetComponent<Button>().onClick.AddListener(() => NumberFieldOnCLick(numberField));
+            int numberOption = i + 1;
+            instance.GetComponent<Button>().onClick.AddListener(() => NumberFieldOnClick(numberOption));
         }
     }
 
-    private void NumberFieldOnCLick(NumberField numberField)
+    private void NumberFieldOnClick(int number)
     {
-        Debug.Log("Number to place: " + numberField.number);
+        Debug.Log("Number to place: " + number);
         if(currentSelectedField != null)
         {
-            currentSelectedField.SetNumber(numberField.number);
+            currentSelectedField.SetNumber(number);
             /*
             if (currentSudokuObject.IsPossibleNumberInField(numberField.number, currentSelectedField.Row, currentSelectedField.Column))
             {
