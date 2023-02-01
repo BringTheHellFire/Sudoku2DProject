@@ -5,21 +5,32 @@ using UnityEngine;
 
 public class SudokuGenerator
 {
-    public static void CreateSudokuObject(out SudokuObject finalSudokuObject, out SudokuObject gameSudokuObject)
+    public static void CreateSudokuObject(out SudokuObject solutionSudokuObject, out SudokuObject puzzleSudokuObject)
     {
-        finalSudokuObject = null;
         SudokuObject sudokuObject = new SudokuObject();
         CreateRandomGroups(sudokuObject);
         if (TryToSolve(sudokuObject))
         {
             sudokuObject = _finalSudokuObject;
         }
-        else
-        {
-            throw new System.Exception("Something went wrong.");
-        }
-        finalSudokuObject = sudokuObject;
-        gameSudokuObject = RemoveSomeRandomNumbers(finalSudokuObject);
+        solutionSudokuObject = sudokuObject;
+        puzzleSudokuObject = RemoveSomeRandomNumbers(solutionSudokuObject);
+    }
+
+    public static void CreateRandomGroups(SudokuObject sudokuObject)
+    {
+        List<int> values = new List<int>() { 0, 1, 2 };
+        int index = UnityEngine.Random.Range(0, values.Count);
+        InsertRandomGroup(sudokuObject, 1 + values[index]);
+        values.RemoveAt(index);
+
+        index = UnityEngine.Random.Range(0, values.Count);
+        InsertRandomGroup(sudokuObject, 4 + values[index]);
+        values.RemoveAt(index);
+
+        index = UnityEngine.Random.Range(0, values.Count);
+        InsertRandomGroup(sudokuObject, 7 + values[index]);
+        values.RemoveAt(index);
     }
 
     private static SudokuObject RemoveSomeRandomNumbers(SudokuObject sudokuObject)
@@ -183,21 +194,7 @@ public class SudokuGenerator
         return amount;
     }
 
-    public static void CreateRandomGroups(SudokuObject sudokuObject)
-    {
-        List<int> values = new List<int>() { 0, 1, 2 };
-        int index = UnityEngine.Random.Range(0, values.Count);
-        InsertRandomGroup(sudokuObject, 1 + values[index]);
-        values.RemoveAt(index);
-
-        index = UnityEngine.Random.Range(0, values.Count);
-        InsertRandomGroup(sudokuObject, 4 + values[index]);
-        values.RemoveAt(index);
-
-        index = UnityEngine.Random.Range(0, values.Count);
-        InsertRandomGroup(sudokuObject, 7 + values[index]);
-        values.RemoveAt(index);
-    }
+    
 
     public static void InsertRandomGroup(SudokuObject sudokuObject, int group)
     {
