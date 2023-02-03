@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LeanTweenTest : MonoBehaviour
 {
@@ -34,7 +35,8 @@ public class LeanTweenTest : MonoBehaviour
 
     private void EnableBackButton()
     {
-        backButton.LeanScale(new Vector3(1f, 1f, 1f), buttonMovementTime).setEaseOutQuart();
+        SceneManager.LoadScene("SudokuLevel");
+        //backButton.LeanScale(new Vector3(1f, 1f, 1f), buttonMovementTime).setEaseOutQuart();
     }
     private void DisableBackButton()
     {
