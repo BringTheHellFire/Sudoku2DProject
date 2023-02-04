@@ -25,7 +25,8 @@ public class FieldSpawning : MonoBehaviour
     void Start()
     {
         CreateFields();
-        CreateNumberFields();
+        CreateNumberOptionFields();
+
         CreateSudokuObject();
     }
     private void CreateFields()
@@ -40,8 +41,17 @@ public class FieldSpawning : MonoBehaviour
                 FieldDictionary.Add(new Tuple<int, int>(i, j), sudokuField);
 
                 instance.GetComponent<Button>().onClick.AddListener(() => FieldOnCLick(sudokuField));
-
             }
+        }
+    }
+    private void CreateNumberOptionFields()
+    {
+        for (int i = 1; i < 10; i++)
+        {
+            GameObject instance = Instantiate(NumberFieldPrefab, NumberFieldPanel.transform);
+            instance.GetComponentInChildren<TMP_Text>().text = (i).ToString();
+            int numberOption = i;
+            instance.GetComponent<Button>().onClick.AddListener(() => NumberFieldOnClick(numberOption));
         }
     }
 
@@ -69,16 +79,7 @@ public class FieldSpawning : MonoBehaviour
     
     
 
-    private void CreateNumberFields()
-    {
-        for (int i = 0; i < 9; i++)
-        {
-            GameObject instance = Instantiate(NumberFieldPrefab, NumberFieldPanel.transform);
-            instance.GetComponentInChildren<TMP_Text>().text = (i + 1).ToString();
-            int numberOption = i + 1;
-            instance.GetComponent<Button>().onClick.AddListener(() => NumberFieldOnClick(numberOption));
-        }
-    }
+    
 
     private void NumberFieldOnClick(int number)
     {
