@@ -127,6 +127,19 @@ public class FieldSpawning : MonoBehaviour
 
     public void CheckButon_ClickOn()
     {
+        if (HasWrongOrEmptyField())
+        {
+            Debug.Log("The board has empty or wrong fields!");
+        }
+        else
+        {
+            Debug.Log("Level completed!");
+        }
+        
+    }
+
+    private bool HasWrongOrEmptyField()
+    {
         for (int i = 0; i < 9; i++)
         {
             for (int j = 0; j < 9; j++)
@@ -135,19 +148,13 @@ public class FieldSpawning : MonoBehaviour
 
                 if (sudokuField.IsChangable)
                 {
-                    Debug.Log("Sudoku Field " + "[" + i + ", " + j + "]" + ": " + sudokuField.GetNumber());
-                    if(_finalSudokuObject.Grid[i,j] == sudokuField.GetNumber())
+                    if (_finalSudokuObject.Grid[i, j] != sudokuField.GetNumber())
                     {
-                        sudokuField.SetColorToGreen();
-                    }
-                    else
-                    {
-                        sudokuField.SetColorToRed();
+                        return true;
                     }
                 }
-
             }
         }
+        return false;
     }
-
 }
