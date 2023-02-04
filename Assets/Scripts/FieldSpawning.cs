@@ -18,6 +18,9 @@ public class FieldSpawning : MonoBehaviour
 
     [SerializeField] private Button InformationButton;
 
+    private SudokuObject _puzzleSudokuGrid;
+    private SudokuObject _solutionSudokuGrid;
+
     void Start()
     {
         CreateFields();
@@ -25,18 +28,17 @@ public class FieldSpawning : MonoBehaviour
         CreateSudokuObject();
     }
 
-    private SudokuObject _gameSudokuObject;
-    private SudokuObject _finalSudokuObject;
+    
     private void CreateSudokuObject()
     {
         SudokuGenerator.CreateSudokuObject(out SudokuObject finalSudokuObject, out SudokuObject gameSudokuObject);
-        _gameSudokuObject = gameSudokuObject;
-        _finalSudokuObject = finalSudokuObject;
+        _puzzleSudokuGrid = gameSudokuObject;
+        _solutionSudokuGrid = finalSudokuObject;
         for (int i = 0; i < 9; i++)
         {
             for (int j = 0; j < 9; j++)
             {
-                var currentValue = _gameSudokuObject.Grid[i, j];
+                var currentValue = _puzzleSudokuGrid.Grid[i, j];
                 if (currentValue != 0)
                 {
                     SudokuField fieldObject = FieldDictionary[new Tuple<int, int>(i, j)];
@@ -148,7 +150,7 @@ public class FieldSpawning : MonoBehaviour
 
                 if (sudokuField.IsChangable)
                 {
-                    if (_finalSudokuObject.Grid[i, j] != sudokuField.GetNumber())
+                    if (_solutionSudokuGrid.Grid[i, j] != sudokuField.GetNumber())
                     {
                         return true;
                     }
