@@ -15,6 +15,10 @@ public class SudokuField
 
     public bool IsChangable = true;
 
+    public GameObject GetInstance()
+    {
+        return instance;
+    }
 
     public SudokuField(GameObject _instance, int _row, int _column)
     {
