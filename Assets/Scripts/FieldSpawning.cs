@@ -18,6 +18,7 @@ public class FieldSpawning : MonoBehaviour
 
     [SerializeField] private Button InformationButton;
 
+    [SerializeField] private List<Button> fieldButtons;
     private Dictionary<Tuple<int, int>, SudokuField> FieldDictionary = new Dictionary<Tuple<int, int>, SudokuField>();
     private SudokuObject _puzzleSudokuGrid;
     private SudokuObject _solutionSudokuGrid;
@@ -35,12 +36,12 @@ public class FieldSpawning : MonoBehaviour
         {
             for (int j = 0; j < 9; j++)
             {
-                GameObject instance = Instantiate(FieldPrefab, SudokuFieldPanel.transform);
+                //GameObject instance = Instantiate(FieldPrefab, SudokuFieldPanel.transform);
 
-                SudokuField sudokuField = new SudokuField(instance, i, j);
+                SudokuField sudokuField = new SudokuField(fieldButtons[i * 9 + j].gameObject, i, j);
                 FieldDictionary.Add(new Tuple<int, int>(i, j), sudokuField);
 
-                instance.GetComponent<Button>().onClick.AddListener(() => FieldOnCLick(sudokuField));
+                fieldButtons[i*9+j].GetComponent<Button>().onClick.AddListener(() => FieldOnCLick(sudokuField));
             }
         }
     }
