@@ -96,8 +96,8 @@ public class FieldSpawning : MonoBehaviour
     }
 
     private SudokuField currentSelectedField;
-    private void FieldOnCLick(SudokuField selectedField) {
-
+    private void FieldOnCLick(SudokuField selectedField) 
+    {
         Debug.Log("Selected field: " + selectedField.Row + ", " + selectedField.Column);
         if (selectedField.IsChangable)
         {
