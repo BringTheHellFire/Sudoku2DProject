@@ -30,14 +30,13 @@ public class FieldSpawning : MonoBehaviour
 
         CreateSudokuObject();
     }
+
     private void CreateFields()
     {
         for (int i = 0; i < 9; i++)
         {
             for (int j = 0; j < 9; j++)
             {
-                //GameObject instance = Instantiate(FieldPrefab, SudokuFieldPanel.transform);
-
                 SudokuField sudokuField = new SudokuField(fieldButtons[i * 9 + j].gameObject, i, j);
                 FieldDictionary.Add(new Tuple<int, int>(i, j), sudokuField);
 
