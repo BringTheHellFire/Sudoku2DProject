@@ -122,10 +122,4 @@ public class MainMenuAnimation : MonoBehaviour
         // Apply the particle changes to the Particle System
         theParticleSystem.SetParticles(particles, currentAmount);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
