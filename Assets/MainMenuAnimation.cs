@@ -75,7 +75,34 @@ public class MainMenuAnimation : MonoBehaviour
     {
         for (int i = 0; i < buttonsToScale.Count; i++)
         {
-            buttonsToScale[i].LeanScale(new Vector3(1f, 1f, 1f), 0.3f).setDelay(0.2f).setEaseOutBack();
+            buttonsToScale[i].LeanScale(new Vector3(1f, 1f, 1f), 0.3f).setEaseOutBack();
+        }
+    }
+
+    public void BackButton_OnClick()
+    {
+        MoveDifficultySelectionPanelRight();
+        MoveMainMenuPanelRight();
+    }
+    private void MoveMainMenuPanelRight()
+    {
+        if (mainMenuPanel != null)
+        {
+            mainMenuPanel.GetComponent<RectTransform>().LeanMoveX(0f, 0.2f).setDelay(0.2f).setEaseOutBack();
+        }
+    }
+    private void MoveDifficultySelectionPanelRight()
+    {
+        if (difficultySelectionPanel != null)
+        {
+            difficultySelectionPanel.GetComponent<RectTransform>().LeanMoveX(900f, 0.2f).setEaseInBack().setOnStart(SetPanelButtonsScaleToEnd);
+        }
+    }
+    private void SetPanelButtonsScaleToEnd()
+    {
+        for (int i = 0; i < buttonsToScale.Count; i++)
+        {
+            buttonsToScale[i].LeanScale(new Vector3(0f, 0f, 0f), 0.3f).setEaseInBack();
         }
     }
 

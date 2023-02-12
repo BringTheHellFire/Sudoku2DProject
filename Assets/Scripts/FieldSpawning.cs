@@ -129,7 +129,7 @@ public class FieldSpawning : MonoBehaviour
 
     public void BackButton_ClickOn()
     {
-        SceneManager.LoadScene("LevelSelection");
+        SceneManager.LoadScene("MainMenuScene");
     }
 
     public void CheckButon_ClickOn()
