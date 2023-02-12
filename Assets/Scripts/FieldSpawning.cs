@@ -41,6 +41,8 @@ public class FieldSpawning : MonoBehaviour
                 FieldDictionary.Add(new Tuple<int, int>(i, j), sudokuField);
 
                 fieldButtons[i*9+j].GetComponent<Button>().onClick.AddListener(() => FieldOnCLick(sudokuField));
+
+
             }
         }
     }

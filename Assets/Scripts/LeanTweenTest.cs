@@ -13,9 +13,11 @@ public class LeanTweenTest : MonoBehaviour
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject playButton;
 
+    [SerializeField] private ParticleSystem stars;
+
     public void ButtonReact_OnClick()
     {
-        playButton.LeanScale(new Vector3(0f, 0f, 0f), buttonMovementTime).setEaseOutQuart().setOnStart(MoveDownDecoration);
+        playButton.LeanScale(new Vector3(0f, 0f, 0f), buttonMovementTime).setEaseOutQuart();
         //transform.LeanScale(new Vector3(1.2f, 1.2f, 0f), buttonMovementTime).setEaseInQuart().setLoopPingPong(1).setOnComplete(TriggerLevelSelection);
     }
 
