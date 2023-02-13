@@ -23,15 +23,6 @@ public class FieldSpawning : MonoBehaviour
     private SudokuObject _puzzleSudokuGrid;
     private SudokuObject _solutionSudokuGrid;
 
-    void Start()
-    {
-        /*
-        CreateFields();
-        CreateNumberOptionFields();
-
-        CreateSudokuObject();*/
-    }
-
     public void CreateFields()
     {
         for (int i = 0; i < 9; i++)
