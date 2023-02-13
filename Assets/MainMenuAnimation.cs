@@ -106,6 +106,11 @@ public class MainMenuAnimation : MonoBehaviour
         }
     }
 
+    public void DifficultyButton_OnClick()
+    {
+        SetPanelButtonsScaleToEnd();
+    }
+
     public void SetStarPosition()
     {
         Debug.Log("Start!");
