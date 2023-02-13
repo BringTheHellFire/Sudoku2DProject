@@ -37,7 +37,7 @@ public class SudokuLevelAnimation : MonoBehaviour
     {
         if (sudokuGridBackgroundPanel != null)
         {
-            sudokuGridBackgroundPanel.GetComponent<RectTransform>().LeanMoveX(0f, 0.5f).setDelay(0.2f).setEaseOutBack().setOnComplete(SetSudokuFieldsToStart);
+            sudokuGridBackgroundPanel.GetComponent<RectTransform>().LeanMoveX(0f, 0.7f).setDelay(0.2f).setEaseOutBack().setOnComplete(SetSudokuFieldsToStart);
         }
     }
     private void SetSudokuFieldsToStart()
@@ -48,7 +48,7 @@ public class SudokuLevelAnimation : MonoBehaviour
     {
         if (numberSelectionPanel != null)
         {
-            numberSelectionPanel.GetComponent<RectTransform>().LeanMoveX(0f, 0.5f).setDelay(0.2f).setEaseOutBack().setOnComplete(SetNumberFieldsToStart);
+            numberSelectionPanel.GetComponent<RectTransform>().LeanMoveX(0f, 0.7f).setDelay(0.2f).setEaseOutBack().setOnComplete(SetNumberFieldsToStart);
         }
     }
     private void SetNumberFieldsToStart()

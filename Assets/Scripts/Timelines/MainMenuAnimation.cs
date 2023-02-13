@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MainMenuAnimation : MonoBehaviour
 {
@@ -106,25 +107,9 @@ public class MainMenuAnimation : MonoBehaviour
         }
     }
 
+    public static UnityEvent isDifficultySelectionPanelDoneAnimating = new UnityEvent();
     public void DifficultyButton_OnClick()
     {
-        SetPanelButtonsScaleToEnd();
-    }
-
-    public void SetStarPosition()
-    {
-        Debug.Log("Start!");
-        var particles = new ParticleSystem.Particle[theParticleSystem.main.maxParticles];
-        var currentAmount = theParticleSystem.GetParticles(particles);
-
-        // Change only the particles that are alive
-        for (int i = 0; i < currentAmount; i++)
-        {
-            particles[i].position = new Vector3(i, i, 0);
-            Debug.Log("Particle: " + i + " " + particles[i].position);
-        }
-
-        // Apply the particle changes to the Particle System
-        theParticleSystem.SetParticles(particles, currentAmount);
+        difficultySelectionPanel.GetComponent<RectTransform>().LeanMoveX(900f, 0.2f).setEaseInBack().setOnComplete(isDifficultySelectionPanelDoneAnimating.Invoke);
     }
 }

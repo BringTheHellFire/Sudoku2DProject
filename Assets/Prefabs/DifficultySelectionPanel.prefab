@@ -373,7 +373,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4282718002003418754}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MainMenuAnimation, Assembly-CSharp
+        m_MethodName: BackButton_OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &4282718001258051840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -493,6 +505,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3093265139226274122, guid: 1da4264d3391f7c4fa6212bf5e27be07, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DifficultyButton_OnClick
+      objectReference: {fileID: 0}
     - target: {fileID: 5239115409986378312, guid: 1da4264d3391f7c4fa6212bf5e27be07, type: 3}
       propertyPath: sceneName
       value: SudokuLevel
@@ -501,6 +517,10 @@ PrefabInstance:
       propertyPath: difficulty
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5239115409986378312, guid: 1da4264d3391f7c4fa6212bf5e27be07, type: 3}
+      propertyPath: difficultySelectionPanel
+      value: 
+      objectReference: {fileID: 4282718001294794615}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1da4264d3391f7c4fa6212bf5e27be07, type: 3}
 --- !u!224 &1261633610281537609 stripped
@@ -629,6 +649,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3093265139226274122, guid: 1da4264d3391f7c4fa6212bf5e27be07, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DifficultyButton_OnClick
+      objectReference: {fileID: 0}
     - target: {fileID: 5239115409986378312, guid: 1da4264d3391f7c4fa6212bf5e27be07, type: 3}
       propertyPath: sceneName
       value: SudokuLevel
@@ -637,6 +661,10 @@ PrefabInstance:
       propertyPath: difficulty
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5239115409986378312, guid: 1da4264d3391f7c4fa6212bf5e27be07, type: 3}
+      propertyPath: difficultySelectionPanel
+      value: 
+      objectReference: {fileID: 4282718001294794615}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1da4264d3391f7c4fa6212bf5e27be07, type: 3}
 --- !u!224 &1261633610248164797 stripped
@@ -763,6 +791,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3093265139226274122, guid: 1da4264d3391f7c4fa6212bf5e27be07, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DifficultyButton_OnClick
+      objectReference: {fileID: 0}
     - target: {fileID: 5239115409986378312, guid: 1da4264d3391f7c4fa6212bf5e27be07, type: 3}
       propertyPath: sceneName
       value: SudokuLevel
@@ -771,6 +803,10 @@ PrefabInstance:
       propertyPath: difficulty
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5239115409986378312, guid: 1da4264d3391f7c4fa6212bf5e27be07, type: 3}
+      propertyPath: difficultySelectionPanel
+      value: 
+      objectReference: {fileID: 4282718001294794615}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1da4264d3391f7c4fa6212bf5e27be07, type: 3}
 --- !u!224 &1261633610699904526 stripped
