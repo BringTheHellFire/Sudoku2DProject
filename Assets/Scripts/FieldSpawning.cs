@@ -34,16 +34,10 @@ public class FieldSpawning : MonoBehaviour
 
                 fieldButtons[i*9+j].GetComponent<Button>().onClick.AddListener(() => FieldOnCLick(sudokuField));
 
-                if (i * 9 + j == 80)
-                {
-                    fieldButtons[i * 9 + j].gameObject.LeanScale(new Vector3(1f, 1f, 1f), 0.4f).setDelay(0.5f + (i * 9 + j) / 81f).setEaseOutQuart().setOnComplete(CreateSudokuObject);
-                }
-                else
-                {
-                    fieldButtons[i * 9 + j].gameObject.LeanScale(new Vector3(1f, 1f, 1f), 0.4f).setDelay(0.5f + (i * 9 + j) / 81f).setEaseOutQuart();
-                }
+                fieldButtons[i * 9 + j].gameObject.LeanScale(new Vector3(1f, 1f, 1f), 0.4f).setDelay(0.5f + (i * 9 + j) / 81f).setEaseOutQuart();
             }
         }
+        CreateSudokuObject();
     }
     public void CreateNumberOptionFields()
     {
