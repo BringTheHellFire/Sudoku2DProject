@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class FieldSpawning : MonoBehaviour
@@ -78,17 +78,20 @@ public class FieldSpawning : MonoBehaviour
         }
     }
 
-    
-    
 
-    
+
+
+    public UnityEvent gridIsFilled = new UnityEvent();
 
     private void NumberFieldOnClick(int number)
     {
-        Debug.Log("Number to place: " + number);
         if(currentSelectedField != null)
         {
             currentSelectedField.SetNumber(number);
+            if (!HasWrongOrEmptyField())
+            {
+                gridIsFilled.Invoke();
+            }
             /*
             if (currentSudokuObject.IsPossibleNumberInField(numberField.number, currentSelectedField.Row, currentSelectedField.Column))
             {
@@ -100,7 +103,6 @@ public class FieldSpawning : MonoBehaviour
     private SudokuField currentSelectedField;
     private void FieldOnCLick(SudokuField selectedField) 
     {
-        Debug.Log("Selected field: " + selectedField.Row + ", " + selectedField.Column);
         if (selectedField.IsChangable)
         {
             if (currentSelectedField != null)
@@ -127,10 +129,7 @@ public class FieldSpawning : MonoBehaviour
         }
     }
 
-    public void BackButton_ClickOn()
-    {
-        SceneManager.LoadScene("MainMenuScene");
-    }
+    
 
     public void CheckButon_ClickOn()
     {
