@@ -237,8 +237,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 1}
+    m_HighlightedColor: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 1}
     m_PressedColor: {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.6792453, g: 0, b: 0, a: 1}
@@ -286,3 +286,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: 
   difficulty: 0
+  difficultySelectionPanel: {fileID: 0}

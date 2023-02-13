@@ -237,7 +237,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
+    m_NormalColor: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 1}
     m_HighlightedColor: {r: 0.10196079, g: 0.10196079, b: 0.10196079, a: 1}
     m_PressedColor: {r: 0.10196079, g: 0.10196079, b: 0.10196079, a: 1}
     m_SelectedColor: {r: 0.10196079, g: 0.10196079, b: 0.10196079, a: 1}
@@ -289,3 +289,4 @@ MonoBehaviour:
   decorations: {fileID: 0}
   backButton: {fileID: 2477338287017137930}
   playButton: {fileID: 0}
+  stars: {fileID: 0}

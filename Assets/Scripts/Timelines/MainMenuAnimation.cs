@@ -35,7 +35,7 @@ public class MainMenuAnimation : MonoBehaviour
     {
         if (rightCloud != null)
         {
-            rightCloud.GetComponent<RectTransform>().LeanMoveX(-200f, 0.5f).setDelay(0.3f).setEaseOutBack().setOnComplete(SetTitleScaleToStartScale);
+            rightCloud.GetComponent<RectTransform>().LeanMoveX(400f, 0.5f).setDelay(0.3f).setEaseOutBack().setOnComplete(SetTitleScaleToStartScale);
         }
     }
     private void SetTitleScaleToStartScale()
