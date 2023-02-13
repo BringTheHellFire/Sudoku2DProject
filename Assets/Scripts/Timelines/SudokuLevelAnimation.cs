@@ -17,35 +17,33 @@ public class SudokuLevelAnimation : MonoBehaviour
 
     private void Awake()
     {
-        numberSelectionPanel.transform.localScale = new Vector3(0f, 0f, 0f);
-        sudokuGridBackgroundPanel.transform.localScale = new Vector3(0f, 0f, 0f);
         backButton.transform.localScale = new Vector3(0f, 0f, 0f);
         fieldSpawner.gridIsFilled.AddListener(BackButton_OnClick);
     }
 
     void Start()
     {
-        SetGridPanelScaleToStart();
-        SetNumberSelectionPanelScaleToStart();
+        SetGridPanelPositionToStart();
+        SetNumberSelectionPanelPositionToStart();
         SetBackButtonToStart();
     }
 
-    private void SetGridPanelScaleToStart()
+    private void SetGridPanelPositionToStart()
     {
         if(sudokuGridBackgroundPanel != null)
         {
-            sudokuGridBackgroundPanel.LeanScale(new Vector3(1f, 1f, 1f), 0.5f).setEaseOutBack().setOnComplete(SetSudokuFieldsToStart);
+            sudokuGridBackgroundPanel.GetComponent<RectTransform>().LeanMoveX(0f, 0.5f).setEaseOutBack().setOnComplete(SetSudokuFieldsToStart);
         }
     }
     private void SetSudokuFieldsToStart()
     {
         fieldSpawner.CreateFields();
     }
-    private void SetNumberSelectionPanelScaleToStart()
+    private void SetNumberSelectionPanelPositionToStart()
     {
         if(numberSelectionPanel != null)
         {
-            numberSelectionPanel.LeanScale(new Vector3(1f, 1f, 1f), 0.5f).setEaseOutBack().setOnComplete(SetNumberFieldsToStart);
+            numberSelectionPanel.GetComponent<RectTransform>().LeanMoveX(0f, 0.5f).setEaseOutBack().setOnComplete(SetNumberFieldsToStart);
         }
     }
     private void SetNumberFieldsToStart()
@@ -72,14 +70,14 @@ public class SudokuLevelAnimation : MonoBehaviour
     {
         if (sudokuGridBackgroundPanel != null)
         {
-            sudokuGridBackgroundPanel.LeanScale(new Vector3(0f, 0f, 0f), 0.3f).setEaseInBack();
+            sudokuGridBackgroundPanel.GetComponent<RectTransform>().LeanMoveX(900f, 0.5f).setEaseInBack();
         }
     }
     private void SetNumberSelectionPanelToEnd()
     {
         if (numberSelectionPanel != null)
         {
-            numberSelectionPanel.LeanScale(new Vector3(0f, 0f, 0f), 0.5f).setEaseInBack();
+            numberSelectionPanel.GetComponent<RectTransform>().LeanMoveX(-900f, 0.5f).setEaseInBack();
         }
     }
     
