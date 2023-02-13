@@ -10,13 +10,11 @@ public class SudokuLevelAnimation : MonoBehaviour
 
     [SerializeField] private FieldSpawning fieldSpawner;
 
-    UnityEvent fieldsSpawned = new UnityEvent();
 
     private void Awake()
     {
         numberSelectionPanel.transform.localScale = new Vector3(0f, 0f, 0f);
         sudokuGridBackgroundPanel.transform.localScale = new Vector3(0f, 0f, 0f);
-        //fieldsSpawned.AddListener(FillGridFields);
     }
 
     void Start()
@@ -35,7 +33,6 @@ public class SudokuLevelAnimation : MonoBehaviour
     private void SetSudokuFieldsToStart()
     {
         fieldSpawner.CreateFields();
-        //fieldsSpawned.Invoke();
     }
     private void SetNumberSelectionPanelScaleToStart()
     {
@@ -47,10 +44,6 @@ public class SudokuLevelAnimation : MonoBehaviour
     private void SetNumberFieldsToStart()
     {
         fieldSpawner.CreateNumberOptionFields();
-    }
-    private void FillGridFields()
-    {
-        fieldSpawner.CreateSudokuObject();
     }
 
 

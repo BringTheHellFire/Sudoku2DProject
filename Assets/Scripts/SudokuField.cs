@@ -32,7 +32,7 @@ public class SudokuField
 
     public void SetHoverMode()
     {
-        instance.GetComponent<Image>().color = new Color(0.70f, 0.99f, 0.99f);
+        instance.GetComponent<Image>().color = new Color(0.4f, 0.4f, 0.4f);
     }
 
     public void UnsetHoverMode()
