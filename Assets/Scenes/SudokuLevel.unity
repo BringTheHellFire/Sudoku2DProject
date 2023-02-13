@@ -3243,6 +3243,75 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9151536382917976709, guid: 7c7e52b636aab0a45b3c99385f6f8d76, type: 3}
   m_PrefabInstance: {fileID: 9151536381010666468}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6443405880245155521
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 927776981399350654, guid: 1014001529d1b85469059233fdf035dc, type: 3}
+      propertyPath: fieldSpawner
+      value: 
+      objectReference: {fileID: 1051019930}
+    - target: {fileID: 927776981399350654, guid: 1014001529d1b85469059233fdf035dc, type: 3}
+      propertyPath: numberSelectionPanel
+      value: 
+      objectReference: {fileID: 254578189}
+    - target: {fileID: 927776981399350654, guid: 1014001529d1b85469059233fdf035dc, type: 3}
+      propertyPath: sudokuGridBackgroundPanel
+      value: 
+      objectReference: {fileID: 2010628448}
+    - target: {fileID: 1784742583161361431, guid: 1014001529d1b85469059233fdf035dc, type: 3}
+      propertyPath: m_Name
+      value: AnimationHandlerForSudokuLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102183742753630482, guid: 1014001529d1b85469059233fdf035dc, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102183742753630482, guid: 1014001529d1b85469059233fdf035dc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 985.0715
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102183742753630482, guid: 1014001529d1b85469059233fdf035dc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1475.7588
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102183742753630482, guid: 1014001529d1b85469059233fdf035dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -29.485916
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102183742753630482, guid: 1014001529d1b85469059233fdf035dc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102183742753630482, guid: 1014001529d1b85469059233fdf035dc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102183742753630482, guid: 1014001529d1b85469059233fdf035dc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102183742753630482, guid: 1014001529d1b85469059233fdf035dc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102183742753630482, guid: 1014001529d1b85469059233fdf035dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102183742753630482, guid: 1014001529d1b85469059233fdf035dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102183742753630482, guid: 1014001529d1b85469059233fdf035dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1014001529d1b85469059233fdf035dc, type: 3}
 --- !u!114 &6918642700037837753 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5390968658454590276, guid: 7c7e52b636aab0a45b3c99385f6f8d76, type: 3}

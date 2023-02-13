@@ -25,13 +25,14 @@ public class FieldSpawning : MonoBehaviour
 
     void Start()
     {
+        /*
         CreateFields();
         CreateNumberOptionFields();
 
-        CreateSudokuObject();
+        CreateSudokuObject();*/
     }
 
-    private void CreateFields()
+    public void CreateFields()
     {
         for (int i = 0; i < 9; i++)
         {
@@ -42,12 +43,18 @@ public class FieldSpawning : MonoBehaviour
 
                 fieldButtons[i*9+j].GetComponent<Button>().onClick.AddListener(() => FieldOnCLick(sudokuField));
 
-                fieldButtons[i * 9 + j].gameObject.LeanScale(new Vector3(1f, 1f, 1f), 0.4f).setDelay(0.5f+(i*9+j)/81f).setEaseOutQuart();
-
+                if (i * 9 + j == 80)
+                {
+                    fieldButtons[i * 9 + j].gameObject.LeanScale(new Vector3(1f, 1f, 1f), 0.4f).setDelay(0.5f + (i * 9 + j) / 81f).setEaseOutQuart().setOnComplete(CreateSudokuObject);
+                }
+                else
+                {
+                    fieldButtons[i * 9 + j].gameObject.LeanScale(new Vector3(1f, 1f, 1f), 0.4f).setDelay(0.5f + (i * 9 + j) / 81f).setEaseOutQuart();
+                }
             }
         }
     }
-    private void CreateNumberOptionFields()
+    public void CreateNumberOptionFields()
     {
         for (int i = 1; i < 10; i++)
         {
@@ -60,7 +67,7 @@ public class FieldSpawning : MonoBehaviour
     }
 
 
-    private void CreateSudokuObject()
+    public void CreateSudokuObject()
     {
         SudokuGenerator.CreateSudokuObject(out SudokuObject finalSudokuObject, out SudokuObject gameSudokuObject);
         _puzzleSudokuGrid = gameSudokuObject;
