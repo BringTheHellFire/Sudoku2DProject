@@ -14,16 +14,23 @@ public class MainMenuAnimation : MonoBehaviour
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject difficultySelectionPanel;
     [SerializeField] private GameObject shopPanel;
+    [SerializeField] private GameObject optionsPanel;
 
     [SerializeField] private GameObject title;
     [SerializeField] private GameObject playButton;
     [SerializeField] private GameObject shopButton;
+    [SerializeField] private GameObject optionsButton;
 
     [SerializeField] private GameObject leftAttachment;
     [SerializeField] private GameObject rightAttachment;
 
     
     [SerializeField] private List<GameObject> buttonsToScale;
+
+    [SerializeField] private GameObject optionsBackButton;
+    [SerializeField] private GameObject shopBackButton;
+
+    [SerializeField] private GameObject themesHolder;
 
     private void Awake()
     {
@@ -48,6 +55,8 @@ public class MainMenuAnimation : MonoBehaviour
 
         title.transform.localScale = new Vector3(0f, 0f, 0f);
         title.GetComponent<TextMeshProUGUI>().color = selectedTheme.textColor;
+
+        themesHolder.transform.localScale = new Vector3(0f, 0f, 0f);
     }
 
     private void Start()
@@ -57,6 +66,7 @@ public class MainMenuAnimation : MonoBehaviour
         SetTitleScaleToStartScale();
         SetPlayButtonScaleToStartScale();
         SetShopButtonToStartScale();
+        SetOptionsButtonToStartScale();
     }
 
     private void MoveLeftAttachmentToStartPosition()
@@ -92,6 +102,13 @@ public class MainMenuAnimation : MonoBehaviour
         if (shopButton != null)
         {
             shopButton.LeanScale(new Vector3(1f, 1f, 1f), 0.3f).setDelay(1.3f).setEaseOutBounce();
+        }
+    }
+    private void SetOptionsButtonToStartScale()
+    {
+        if (optionsButton != null)
+        {
+            optionsButton.LeanScale(new Vector3(1f, 1f, 1f), 0.3f).setDelay(1.4f).setEaseOutBounce();
         }
     }
 
@@ -165,10 +182,40 @@ public class MainMenuAnimation : MonoBehaviour
     {
         MoveMainMenuPanelRight();
         shopPanel.GetComponent<RectTransform>().LeanMoveX(0f, 0.2f).setDelay(0.2f).setEaseOutBack();
+        shopBackButton.LeanScale(new Vector3(1f, 1f, 1f), 0.3f).setEaseOutBack();
     }
     public void BackButtonShopPanel_OnClick()
     {
+        shopBackButton.LeanScale(new Vector3(0f, 0f, 0f), 0.3f).setEaseInBack();
         shopPanel.GetComponent<RectTransform>().LeanMoveX(-900f, 0.2f).setEaseInBack();
         MoveMainMenuPanelToStart();
+    }
+    public void OptionsButton_OnClick()
+    {
+        MoveMainMenuPanelToDown();
+        optionsPanel.GetComponent<RectTransform>().LeanMoveY(0f, 0.2f).setDelay(0.2f).setEaseOutBack();
+        themesHolder.LeanScale(new Vector3(1f, 1f, 1f), 0.4f).setDelay(0.2f).setEaseOutQuart();
+        optionsBackButton.LeanScale(new Vector3(1f, 1f, 1f), 0.3f).setEaseOutBack();
+    }
+    private void MoveMainMenuPanelToDown()
+    {
+        if (mainMenuPanel != null)
+        {
+            mainMenuPanel.GetComponent<RectTransform>().LeanMoveY(-1900f, 0.2f).setEaseInBack();
+        }
+    }
+    private void MoveMainMenuPanelToUp()
+    {
+        if (mainMenuPanel != null)
+        {
+            mainMenuPanel.GetComponent<RectTransform>().LeanMoveY(0f, 0.2f).setDelay(0.2f).setEaseOutBack();
+        }
+    }
+    public void BackButtonOptionsPanel_OnClick()
+    {
+        optionsBackButton.LeanScale(new Vector3(0f, 0f, 0f), 0.3f).setEaseInBack();
+        optionsPanel.GetComponent<RectTransform>().LeanMoveY(1900f, 0.2f).setEaseInBack();
+        themesHolder.LeanScale(new Vector3(0f, 0f, 0f), 0.2f).setEaseInQuart();
+        MoveMainMenuPanelToUp();
     }
 }
