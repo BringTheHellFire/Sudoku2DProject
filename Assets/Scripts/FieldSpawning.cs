@@ -156,6 +156,8 @@ public class FieldSpawning : MonoBehaviour
         return false;
     }
 
+    public static UnityEvent powerUpUsed = new UnityEvent();
+    public static UnityEvent moneyUsed = new UnityEvent();
 
     public void FillSelectedCellPowerUp_OnClick()
     {
@@ -165,10 +167,12 @@ public class FieldSpawning : MonoBehaviour
             {
                 playerInfo.fieldPowerUpAmount -= 1;
                 currentSelectedField.SetNumber(_solutionSudokuGrid.Grid[currentSelectedField.Row, currentSelectedField.Column]);
+                powerUpUsed.Invoke();
             }
             else if(playerInfo.coinAmount >= 50){
                 playerInfo.coinAmount -= 50;
                 currentSelectedField.SetNumber(_solutionSudokuGrid.Grid[currentSelectedField.Row, currentSelectedField.Column]);
+                moneyUsed.Invoke();
             }
         }
     }
@@ -186,6 +190,7 @@ public class FieldSpawning : MonoBehaviour
                         FieldDictionary[new Tuple<int, int>(currentSelectedField.Row, i)].SetNumber(_solutionSudokuGrid.Grid[currentSelectedField.Row, i]);
                     }
                 }
+                powerUpUsed.Invoke();
             }
             else if(playerInfo.coinAmount >= 100)
             {
@@ -197,6 +202,7 @@ public class FieldSpawning : MonoBehaviour
                         FieldDictionary[new Tuple<int, int>(currentSelectedField.Row, i)].SetNumber(_solutionSudokuGrid.Grid[currentSelectedField.Row, i]);
                     }
                 }
+                moneyUsed.Invoke();
             }
             
         } 
@@ -208,30 +214,26 @@ public class FieldSpawning : MonoBehaviour
             if (playerInfo.columnPowerUpAmount > 0)
             {
                 playerInfo.columnPowerUpAmount -= 1;
-                if (currentSelectedField != null)
+                for (int i = 0; i < 9; i++)
                 {
-                    for (int i = 0; i < 9; i++)
+                    if (FieldDictionary[new Tuple<int, int>(i, currentSelectedField.Column)].IsChangable)
                     {
-                        if (FieldDictionary[new Tuple<int, int>(i, currentSelectedField.Column)].IsChangable)
-                        {
-                            FieldDictionary[new Tuple<int, int>(i, currentSelectedField.Column)].SetNumber(_solutionSudokuGrid.Grid[i, currentSelectedField.Column]);
-                        }
+                        FieldDictionary[new Tuple<int, int>(i, currentSelectedField.Column)].SetNumber(_solutionSudokuGrid.Grid[i, currentSelectedField.Column]);
                     }
                 }
+                powerUpUsed.Invoke();
             }
             else if (playerInfo.coinAmount >= 100)
             {
                 playerInfo.coinAmount -= 100;
-                if (currentSelectedField != null)
+                for (int i = 0; i < 9; i++)
                 {
-                    for (int i = 0; i < 9; i++)
+                    if (FieldDictionary[new Tuple<int, int>(i, currentSelectedField.Column)].IsChangable)
                     {
-                        if (FieldDictionary[new Tuple<int, int>(i, currentSelectedField.Column)].IsChangable)
-                        {
-                            FieldDictionary[new Tuple<int, int>(i, currentSelectedField.Column)].SetNumber(_solutionSudokuGrid.Grid[i, currentSelectedField.Column]);
-                        }
+                        FieldDictionary[new Tuple<int, int>(i, currentSelectedField.Column)].SetNumber(_solutionSudokuGrid.Grid[i, currentSelectedField.Column]);
                     }
                 }
+                moneyUsed.Invoke();
             }
 
         }

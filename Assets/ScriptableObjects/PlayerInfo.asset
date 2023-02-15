@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1c3a42adc196840bc3fbcbc4fb60dc, type: 3}
   m_Name: PlayerInfo
   m_EditorClassIdentifier: 
-  coinAmount: 0
+  coinAmount: 250
+  selectedTheme: {fileID: 11400000, guid: eec9ae0e5d41b6f44acc06c489c5bea9, type: 2}
+  fieldPowerUpAmount: 1
+  rowPowerUpAmount: 3
+  columnPowerUpAmount: 2
