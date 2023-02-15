@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class SudokuLevelAnimation : MonoBehaviour
 {
-    [SerializeField] private PlayerInfo playerInfo;
+    
 
     [SerializeField] private GameObject sudokuGridBackgroundPanel;
     [SerializeField] private GameObject numberSelectionPanel;

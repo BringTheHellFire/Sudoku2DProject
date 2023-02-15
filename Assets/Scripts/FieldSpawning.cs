@@ -89,11 +89,6 @@ public class FieldSpawning : MonoBehaviour
             {
                 gridIsFilled.Invoke();
             }
-            /*
-            if (currentSudokuObject.IsPossibleNumberInField(numberField.number, currentSelectedField.Row, currentSelectedField.Column))
-            {
-                currentSelectedField.SetNumber(numberField.number);
-            }*/
         }
     }
 
@@ -159,5 +154,40 @@ public class FieldSpawning : MonoBehaviour
             }
         }
         return false;
+    }
+
+
+    public void FillSelectedCellPowerUp_OnClick()
+    {
+        if(currentSelectedField != null)
+        {
+            currentSelectedField.SetNumber(_solutionSudokuGrid.Grid[currentSelectedField.Row, currentSelectedField.Column]);
+        }
+    }
+    public void FillSelectedRowPowerUp_OnClick()
+    {
+        if(currentSelectedField != null)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                if(FieldDictionary[new Tuple<int, int>(currentSelectedField.Row, i)].IsChangable)
+                {
+                    FieldDictionary[new Tuple<int, int>(currentSelectedField.Row, i)].SetNumber(_solutionSudokuGrid.Grid[currentSelectedField.Row, i]);
+                }
+            }
+        } 
+    }
+    public void FillSelectedColumnPowerUp_OnClick()
+    {
+        if (currentSelectedField != null)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                if (FieldDictionary[new Tuple<int, int>(i, currentSelectedField.Column)].IsChangable)
+                {
+                    FieldDictionary[new Tuple<int, int>(i, currentSelectedField.Column)].SetNumber(_solutionSudokuGrid.Grid[i, currentSelectedField.Column]);
+                }
+            }
+        }
     }
 }
