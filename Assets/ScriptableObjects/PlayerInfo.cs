@@ -6,4 +6,6 @@ using UnityEngine;
 public class PlayerInfo : ScriptableObject
 {
     public int coinAmount = 0;
+
+    public Theme selectedTheme;
 }

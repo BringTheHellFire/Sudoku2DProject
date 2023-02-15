@@ -157,6 +157,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 708731f0a46a2204c9bdd4fe68882092, type: 2}
   themesHolder: {fileID: 3666102796982791858}
   themeHolder: {fileID: 6646735529007939411, guid: 9ec71099b1acd0041b2e7855dbc5b8dc, type: 3}
+  playerInfo: {fileID: 11400000, guid: 6211fc154113c284c8b5d6da89eed879, type: 2}
 --- !u!1001 &7395465586442429157
 PrefabInstance:
   m_ObjectHideFlags: 0
