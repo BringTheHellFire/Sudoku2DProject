@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,14 +47,5 @@ public class SudokuField
     {
         instance.GetComponentInChildren<TMP_Text>().text = number.ToString();
         _number = number;
-    }
-
-    public void SetColorToGreen()
-    {
-        instance.GetComponent<Image>().color = Color.green;
-    }
-    public void SetColorToRed()
-    {
-        instance.GetComponent<Image>().color = Color.red;
     }
 }
