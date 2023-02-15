@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class FieldSpawning : MonoBehaviour
 {
+    [SerializeField] private PlayerInfo playerInfo;
 
     [SerializeField] private GameObject MainPanel;
     [SerializeField] private GameObject SudokuFieldPanel;
@@ -23,6 +24,7 @@ public class FieldSpawning : MonoBehaviour
     private SudokuObject _puzzleSudokuGrid;
     private SudokuObject _solutionSudokuGrid;
 
+    public static UnityEvent fieldsSpawned = new UnityEvent();
     public void CreateFields()
     {
         for (int i = 0; i < 9; i++)
@@ -49,6 +51,7 @@ public class FieldSpawning : MonoBehaviour
             instance.GetComponent<Button>().onClick.AddListener(() => NumberFieldOnClick(numberOption));
             instance.LeanScale(new Vector3(1f, 1f, 1f), 0.4f).setDelay(0.3f).setEaseOutQuart();
         }
+        fieldsSpawned.Invoke();
     }
 
 
@@ -101,10 +104,10 @@ public class FieldSpawning : MonoBehaviour
         {
             if (currentSelectedField != null)
             {
-                currentSelectedField.UnsetHoverMode();
+                currentSelectedField.GetInstance().GetComponent<Image>().color = Color.white;
             }
             currentSelectedField = selectedField;
-            selectedField.SetHoverMode();
+            selectedField.GetInstance().GetComponent<Image>().color = playerInfo.selectedTheme.buttonHighlightedColor;
         }
     }
 

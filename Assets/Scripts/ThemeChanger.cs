@@ -12,9 +12,14 @@ public class ThemeChanger : MonoBehaviour
 
     [SerializeField] private List<TextMeshProUGUI> textFieldsToChange = new List<TextMeshProUGUI>();
 
+    [SerializeField] private List<Image> panelsToChange = new List<Image>();
+
+    [SerializeField] private List<TextMeshProUGUI> panelTextFieldsToChange = new List<TextMeshProUGUI>();
+
     private void Awake()
     {
         ThemeListDisplayUI.themeChanged.AddListener(ChangeCurrentColorsToThemeColors);
+        FieldSpawning.fieldsSpawned.AddListener(ChangeCurrentColorsToThemeColors);
     }
 
     private void Start()
@@ -27,6 +32,8 @@ public class ThemeChanger : MonoBehaviour
         SetAllButtonsToTheme();
         SetBackgroundColorToTheme();
         SetAllTextFieldColorsToTheme();
+        SetAllPanelColorsToTheme();
+        SetAllPanelTextFieldColorsToTheme();
     }
     private void SetAllButtonsToTheme()
     {
@@ -54,5 +61,18 @@ public class ThemeChanger : MonoBehaviour
             textFields.color = playerInfo.selectedTheme.textColor;
         }
     }
-
+    private void SetAllPanelColorsToTheme()
+    {
+        foreach (var panel in panelsToChange)
+        {
+            panel.color = playerInfo.selectedTheme.panelBackgroundColor;
+        }
+    }
+    private void SetAllPanelTextFieldColorsToTheme()
+    {
+        foreach (var textFields in panelTextFieldsToChange)
+        {
+            textFields.color = playerInfo.selectedTheme.panelTextColor;
+        }
+    }
 }

@@ -8,7 +8,11 @@ public class Theme : ScriptableObject
     public string themeName;
 
     public Color backgroundColor;
+    public Color panelBackgroundColor;
+
     public Color textColor;
+    public Color panelTextColor;
+
     public Color buttonColor;
     public Color buttonHighlightedColor;
     public Color buttonPressedColor;

@@ -21,24 +21,6 @@ public class SudokuFieldTests
         sudokuField = new SudokuField(fieldObject, 0, 0);
     }
 
-    [Test]
-    public void SetHoverMode_ChangesFieldColorToGray()
-    {
-        // Arrange
-        // Act
-        sudokuField.SetHoverMode();
-        // Assert
-        Assert.AreEqual(new Color(0.4f, 0.4f, 0.4f), fieldImage.color);
-        Debug.Log("Succesfully set to hover mode.");
-    }
-
-    [Test]
-    public void UnsetHoverMode_ChangesFieldColorToBlack()
-    {
-        sudokuField.UnsetHoverMode();
-        Assert.AreEqual(new Color(0f, 0f, 0f), fieldImage.color);
-    }
-
     [UnityTest]
     public IEnumerator SetNumber_ChangesFieldTextToNumber()
     {

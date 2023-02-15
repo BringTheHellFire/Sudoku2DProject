@@ -28,16 +28,6 @@ public class SudokuField
     public int Row { get => row; set => row = value; }
     public int Column { get => column; set => column = value; }
 
-    public void SetHoverMode()
-    {
-        instance.GetComponent<Image>().color = new Color(0.4f, 0.4f, 0.4f);
-    }
-
-    public void UnsetHoverMode()
-    {
-        instance.GetComponent<Image>().color = new Color(0f, 0f, 0f);
-    }
-
     public int GetNumber()
     {
         return _number;

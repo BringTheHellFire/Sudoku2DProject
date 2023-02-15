@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   themeName: Dark
   backgroundColor: {r: 0.12156863, g: 0.12156863, b: 0.12156863, a: 1}
+  panelBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
   textColor: {r: 1, g: 1, b: 1, a: 1}
+  panelTextColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
   buttonColor: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 1}
-  buttonHighlightedColor: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 1}
+  buttonHighlightedColor: {r: 0.009433985, g: 0.009433985, b: 0.009433985, a: 1}
   buttonPressedColor: {r: 0, g: 0, b: 0, a: 1}
-  buttonSelectedColor: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 1}
+  buttonSelectedColor: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 1}

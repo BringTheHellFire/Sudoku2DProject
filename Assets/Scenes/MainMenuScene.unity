@@ -881,7 +881,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 503560527539037032, guid: 2a6c65ac9ddca46428e956bd9dc97129, type: 3}
       propertyPath: m_Name
-      value: UIManager
+      value: AnimationHandler
       objectReference: {fileID: 0}
     - target: {fileID: 503560527539037033, guid: 2a6c65ac9ddca46428e956bd9dc97129, type: 3}
       propertyPath: title
