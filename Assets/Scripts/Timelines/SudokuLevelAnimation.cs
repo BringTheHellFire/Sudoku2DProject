@@ -11,6 +11,7 @@ public class SudokuLevelAnimation : MonoBehaviour
 
     [SerializeField] private GameObject sudokuGridBackgroundPanel;
     [SerializeField] private GameObject numberSelectionPanel;
+    [SerializeField] private GameObject powerUpPanel;
 
     [SerializeField] private GameObject victoryScreenPanel;
     [SerializeField] private GameObject exitScreenPanel;
@@ -27,6 +28,7 @@ public class SudokuLevelAnimation : MonoBehaviour
         numberSelectionPanel.GetComponent<RectTransform>().localPosition = new Vector3(-900f, -350f, 0f);
         backButton.transform.localScale = new Vector3(0f, 0f, 0f);
         coinAmountDisplay.transform.localScale = new Vector3(0f, 0f, 0f);
+        powerUpPanel.transform.localScale = new Vector3(0f, 0f, 0f);
         fieldSpawner.gridIsFilled.AddListener(VictoryPanelAnimationStart);
     }
 
@@ -36,6 +38,7 @@ public class SudokuLevelAnimation : MonoBehaviour
         SetNumberSelectionPanelPositionToStart();
         SetBackButtonToStart();
         SetCoinAmountDisplayToStart();
+        SetPowerUpDisplayToStart();
     }
 
     private void SetGridPanelPositionToStart()
@@ -68,6 +71,10 @@ public class SudokuLevelAnimation : MonoBehaviour
     {
         coinAmountDisplay.LeanScale(new Vector3(1f, 1f, 1f), 0.5f).setDelay(1.2f).setEaseOutBack();
     }
+    private void SetPowerUpDisplayToStart()
+    {
+        powerUpPanel.LeanScale(new Vector3(1f, 1f, 1f), 0.5f).setDelay(1.2f).setEaseOutBack();
+    }
 
     public void BackButton_OnClick()
     {
@@ -76,6 +83,7 @@ public class SudokuLevelAnimation : MonoBehaviour
         ExitPanelAnimationStart();
         backButton.LeanScale(new Vector3(0f, 0f, 0f), 0.5f).setEaseInBack();
         coinAmountDisplay.LeanScale(new Vector3(0f, 0f, 0f), 0.5f).setEaseInBack();
+        powerUpPanel.LeanScale(new Vector3(0f, 0f, 0f), 0.5f).setEaseInBack();
     }
     private void LoadMainMenuScene()
     {
@@ -129,6 +137,7 @@ public class SudokuLevelAnimation : MonoBehaviour
         numberSelectionPanel.GetComponent<RectTransform>().LeanMoveX(0f, 0.5f).setDelay(0.5f).setEaseOutBack();
         SetBackButtonToStart();
         SetCoinAmountDisplayToStart();
+        SetPowerUpDisplayToStart();
     }
 
     public void ExitButton_OnClick()
