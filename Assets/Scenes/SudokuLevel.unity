@@ -664,6 +664,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &564569334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5349083095964129909, guid: 75877157437da824aa8af40c17179b6d, type: 3}
+  m_PrefabInstance: {fileID: 8591623291259335109}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &566181266 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 927776981399350654, guid: 1014001529d1b85469059233fdf035dc, type: 3}
@@ -1858,6 +1863,10 @@ PrefabInstance:
       propertyPath: exitScreenPanel
       value: 
       objectReference: {fileID: 816662671}
+    - target: {fileID: 927776981399350654, guid: 1014001529d1b85469059233fdf035dc, type: 3}
+      propertyPath: coinAmountDisplay
+      value: 
+      objectReference: {fileID: 564569334}
     - target: {fileID: 927776981399350654, guid: 1014001529d1b85469059233fdf035dc, type: 3}
       propertyPath: victoryScreenPanel
       value: 

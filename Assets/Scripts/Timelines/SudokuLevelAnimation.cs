@@ -14,6 +14,7 @@ public class SudokuLevelAnimation : MonoBehaviour
     [SerializeField] private GameObject exitScreenPanel;
 
     [SerializeField] private GameObject backButton;
+    [SerializeField] private GameObject coinAmountDisplay;
 
     [SerializeField] private FieldSpawning fieldSpawner;
 
@@ -23,6 +24,7 @@ public class SudokuLevelAnimation : MonoBehaviour
         sudokuGridBackgroundPanel.GetComponent<RectTransform>().localPosition = new Vector3(900f, 150f, 0f);
         numberSelectionPanel.GetComponent<RectTransform>().localPosition = new Vector3(-900f, -350f, 0f);
         backButton.transform.localScale = new Vector3(0f, 0f, 0f);
+        coinAmountDisplay.transform.localScale = new Vector3(0f, 0f, 0f);
         fieldSpawner.gridIsFilled.AddListener(VictoryPanelAnimationStart);
     }
 
@@ -31,6 +33,7 @@ public class SudokuLevelAnimation : MonoBehaviour
         SetGridPanelPositionToStart();
         SetNumberSelectionPanelPositionToStart();
         SetBackButtonToStart();
+        SetCoinAmountDisplayToStart();
     }
 
     private void SetGridPanelPositionToStart()
@@ -59,6 +62,10 @@ public class SudokuLevelAnimation : MonoBehaviour
     {
         backButton.LeanScale(new Vector3(1f, 1f, 1f), 0.5f).setDelay(1f).setEaseOutBack();
     }
+    private void SetCoinAmountDisplayToStart()
+    {
+        coinAmountDisplay.LeanScale(new Vector3(1f, 1f, 1f), 0.5f).setDelay(1.2f).setEaseOutBack();
+    }
 
     public void BackButton_OnClick()
     {
@@ -66,6 +73,7 @@ public class SudokuLevelAnimation : MonoBehaviour
         SetNumberSelectionPanelToEnd();
         ExitPanelAnimationStart();
         backButton.LeanScale(new Vector3(0f, 0f, 0f), 0.5f).setEaseInBack();
+        coinAmountDisplay.LeanScale(new Vector3(0f, 0f, 0f), 0.5f).setEaseInBack();
     }
     private void LoadMainMenuScene()
     {
@@ -118,6 +126,7 @@ public class SudokuLevelAnimation : MonoBehaviour
         sudokuGridBackgroundPanel.GetComponent<RectTransform>().LeanMoveX(0f, 0.5f).setDelay(0.5f).setEaseOutBack();
         numberSelectionPanel.GetComponent<RectTransform>().LeanMoveX(0f, 0.5f).setDelay(0.5f).setEaseOutBack();
         SetBackButtonToStart();
+        SetCoinAmountDisplayToStart();
     }
 
     public void ExitButton_OnClick()
