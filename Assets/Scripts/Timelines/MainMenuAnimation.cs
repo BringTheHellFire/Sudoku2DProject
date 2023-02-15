@@ -146,4 +146,9 @@ public class MainMenuAnimation : MonoBehaviour
         MoveMainMenuPanelRight();
         shopPanel.GetComponent<RectTransform>().LeanMoveX(0f, 0.2f).setDelay(0.2f).setEaseOutBack();
     }
+    public void BackButtonShopPanel_OnClick()
+    {
+        shopPanel.GetComponent<RectTransform>().LeanMoveX(-900f, 0.2f).setEaseInBack();
+        MoveMainMenuPanelToStart();
+    }
 }

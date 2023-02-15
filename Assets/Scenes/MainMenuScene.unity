@@ -557,6 +557,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1291278067}
     m_Modifications:
+    - target: {fileID: 453356651882116697, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 453356651882116697, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 453356651882116697, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1608187337}
+    - target: {fileID: 453356651882116697, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 453356651882116697, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackButtonShopPanel_OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 453356651882116697, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenuAnimation, Scripts
+      objectReference: {fileID: 0}
+    - target: {fileID: 453356651882116697, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 453356652777269985, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
