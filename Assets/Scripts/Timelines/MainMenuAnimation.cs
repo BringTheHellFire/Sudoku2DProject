@@ -17,6 +17,7 @@ public class MainMenuAnimation : MonoBehaviour
 
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject difficultySelectionPanel;
+    [SerializeField] private GameObject shopPanel;
     [SerializeField] private List<GameObject> buttonsToScale;
 
     private void Start()
@@ -107,9 +108,8 @@ public class MainMenuAnimation : MonoBehaviour
         }
     }
 
-    public static UnityEvent isDifficultySelectionPanelDoneAnimating = new UnityEvent();
     public void DifficultyButton_OnClick()
     {
-        difficultySelectionPanel.GetComponent<RectTransform>().LeanMoveX(900f, 0.2f).setEaseInBack().setOnComplete(isDifficultySelectionPanelDoneAnimating.Invoke);
+        difficultySelectionPanel.GetComponent<RectTransform>().LeanMoveX(900f, 0.2f).setEaseInBack();
     }
 }
