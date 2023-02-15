@@ -261,11 +261,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5815578439484488679, guid: d317359cdd26a8441ad2166f2c52f3c2, type: 3}
   m_PrefabInstance: {fileID: 605355996}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &261305405 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5815578439484488678, guid: d317359cdd26a8441ad2166f2c52f3c2, type: 3}
+  m_PrefabInstance: {fileID: 605355996}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &362697426 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7322249929065561440, guid: 16fd6268afe25fb41b14dcfbebb39883, type: 3}
   m_PrefabInstance: {fileID: 7322249928871948210}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &362697428 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7322249929065561446, guid: 16fd6268afe25fb41b14dcfbebb39883, type: 3}
+  m_PrefabInstance: {fileID: 7322249928871948210}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362697426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &579198164 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1261633610281537608, guid: 9f970750a17e3384d9b89d730429f02f, type: 3}
@@ -790,6 +806,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 478398186265285964, guid: 5398a2be3d4bcf74ba2e8abdb027fe21, type: 3}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 261305405}
+    - target: {fileID: 478398186265285964, guid: 5398a2be3d4bcf74ba2e8abdb027fe21, type: 3}
+      propertyPath: textFieldsToChange.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 478398186265285964, guid: 5398a2be3d4bcf74ba2e8abdb027fe21, type: 3}
+      propertyPath: textFieldsToChange.Array.data[0]
+      value: 
+      objectReference: {fileID: 362697428}
+    - target: {fileID: 478398186265285964, guid: 5398a2be3d4bcf74ba2e8abdb027fe21, type: 3}
+      propertyPath: textFieldsToChange.Array.data[1]
+      value: 
+      objectReference: {fileID: 7322249928871948213}
     - target: {fileID: 478398186265285965, guid: 5398a2be3d4bcf74ba2e8abdb027fe21, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1341,3 +1373,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5121067082713198768, guid: 16fd6268afe25fb41b14dcfbebb39883, type: 3}
   m_PrefabInstance: {fileID: 7322249928871948210}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7322249928871948213 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7553479984276810688, guid: 16fd6268afe25fb41b14dcfbebb39883, type: 3}
+  m_PrefabInstance: {fileID: 7322249928871948210}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7322249928871948211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
