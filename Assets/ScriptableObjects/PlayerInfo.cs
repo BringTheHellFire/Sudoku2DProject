@@ -8,4 +8,8 @@ public class PlayerInfo : ScriptableObject
     public int coinAmount = 0;
 
     public Theme selectedTheme;
+
+    public int fieldPowerUpAmount = 0;
+    public int rowPowerUpAmount = 0;
+    public int columnPowerUpAmount = 0;
 }

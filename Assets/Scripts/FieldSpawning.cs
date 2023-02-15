@@ -161,33 +161,80 @@ public class FieldSpawning : MonoBehaviour
     {
         if(currentSelectedField != null)
         {
-            currentSelectedField.SetNumber(_solutionSudokuGrid.Grid[currentSelectedField.Row, currentSelectedField.Column]);
+            if(playerInfo.fieldPowerUpAmount > 0)
+            {
+                playerInfo.fieldPowerUpAmount -= 1;
+                currentSelectedField.SetNumber(_solutionSudokuGrid.Grid[currentSelectedField.Row, currentSelectedField.Column]);
+            }
+            else if(playerInfo.coinAmount >= 50){
+                playerInfo.coinAmount -= 50;
+                currentSelectedField.SetNumber(_solutionSudokuGrid.Grid[currentSelectedField.Row, currentSelectedField.Column]);
+            }
         }
     }
     public void FillSelectedRowPowerUp_OnClick()
     {
         if(currentSelectedField != null)
         {
-            for (int i = 0; i < 9; i++)
+            if(playerInfo.rowPowerUpAmount > 0)
             {
-                if(FieldDictionary[new Tuple<int, int>(currentSelectedField.Row, i)].IsChangable)
+                playerInfo.rowPowerUpAmount -= 1;
+                for (int i = 0; i < 9; i++)
                 {
-                    FieldDictionary[new Tuple<int, int>(currentSelectedField.Row, i)].SetNumber(_solutionSudokuGrid.Grid[currentSelectedField.Row, i]);
+                    if (FieldDictionary[new Tuple<int, int>(currentSelectedField.Row, i)].IsChangable)
+                    {
+                        FieldDictionary[new Tuple<int, int>(currentSelectedField.Row, i)].SetNumber(_solutionSudokuGrid.Grid[currentSelectedField.Row, i]);
+                    }
                 }
             }
+            else if(playerInfo.coinAmount >= 100)
+            {
+                playerInfo.coinAmount -= 100;
+                for (int i = 0; i < 9; i++)
+                {
+                    if (FieldDictionary[new Tuple<int, int>(currentSelectedField.Row, i)].IsChangable)
+                    {
+                        FieldDictionary[new Tuple<int, int>(currentSelectedField.Row, i)].SetNumber(_solutionSudokuGrid.Grid[currentSelectedField.Row, i]);
+                    }
+                }
+            }
+            
         } 
     }
     public void FillSelectedColumnPowerUp_OnClick()
     {
         if (currentSelectedField != null)
         {
-            for (int i = 0; i < 9; i++)
+            if (playerInfo.columnPowerUpAmount > 0)
             {
-                if (FieldDictionary[new Tuple<int, int>(i, currentSelectedField.Column)].IsChangable)
+                playerInfo.columnPowerUpAmount -= 1;
+                if (currentSelectedField != null)
                 {
-                    FieldDictionary[new Tuple<int, int>(i, currentSelectedField.Column)].SetNumber(_solutionSudokuGrid.Grid[i, currentSelectedField.Column]);
+                    for (int i = 0; i < 9; i++)
+                    {
+                        if (FieldDictionary[new Tuple<int, int>(i, currentSelectedField.Column)].IsChangable)
+                        {
+                            FieldDictionary[new Tuple<int, int>(i, currentSelectedField.Column)].SetNumber(_solutionSudokuGrid.Grid[i, currentSelectedField.Column]);
+                        }
+                    }
                 }
             }
+            else if (playerInfo.coinAmount >= 100)
+            {
+                playerInfo.coinAmount -= 100;
+                if (currentSelectedField != null)
+                {
+                    for (int i = 0; i < 9; i++)
+                    {
+                        if (FieldDictionary[new Tuple<int, int>(i, currentSelectedField.Column)].IsChangable)
+                        {
+                            FieldDictionary[new Tuple<int, int>(i, currentSelectedField.Column)].SetNumber(_solutionSudokuGrid.Grid[i, currentSelectedField.Column]);
+                        }
+                    }
+                }
+            }
+
         }
+        
     }
 }
