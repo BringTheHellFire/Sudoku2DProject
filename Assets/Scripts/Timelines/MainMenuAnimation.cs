@@ -6,51 +6,72 @@ using UnityEngine.Events;
 
 public class MainMenuAnimation : MonoBehaviour
 {
-
-    [SerializeField] private GameObject title;
-    [SerializeField] private GameObject playButton;
-
-    [SerializeField] private ParticleSystem theParticleSystem;
-
-    [SerializeField] private GameObject leftCloud;
-    [SerializeField] private GameObject rightCloud;
-
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject difficultySelectionPanel;
     [SerializeField] private GameObject shopPanel;
+
+    [SerializeField] private GameObject title;
+    [SerializeField] private GameObject playButton;
+    [SerializeField] private GameObject shopButton;
+
+    [SerializeField] private GameObject leftAttachment;
+    [SerializeField] private GameObject rightAttachment;
+
+    
     [SerializeField] private List<GameObject> buttonsToScale;
+
+    private void Awake()
+    {
+        leftAttachment.GetComponent<RectTransform>().anchoredPosition = new Vector3(-550f, 50f, 0f);
+        rightAttachment.GetComponent<RectTransform>().anchoredPosition = new Vector3(1100f, 50f, 0f);
+
+        title.transform.localScale = new Vector3(0f, 0f, 0f);
+        playButton.transform.localScale = new Vector3(0f, 0f, 0f);
+        shopButton.transform.localScale = new Vector3(0f, 0f, 0f);
+    }
 
     private void Start()
     {
-        MoveLeftCloudToStartPosition();
+        MoveLeftAttachmentToStartPosition();
+        MoveRightAttachmentToStartPosition();
+        SetTitleScaleToStartScale();
+        SetPlayButtonScaleToStartScale();
+        SetShopButtonToStartScale();
     }
 
-    private void MoveLeftCloudToStartPosition()
+    private void MoveLeftAttachmentToStartPosition()
     {
-        if (leftCloud != null)
+        if (leftAttachment != null)
         {
-            leftCloud.GetComponent<RectTransform>().LeanMoveX(300f, 0.5f).setDelay(0.1f).setEaseOutBack().setOnStart(MoveRightCloudToStartPosition);
+            leftAttachment.GetComponent<RectTransform>().LeanMoveX(300f, 0.5f).setDelay(0.1f).setEaseOutBack();
         }
     }
-    private void MoveRightCloudToStartPosition()
+    private void MoveRightAttachmentToStartPosition()
     {
-        if (rightCloud != null)
+        if (rightAttachment != null)
         {
-            rightCloud.GetComponent<RectTransform>().LeanMoveX(400f, 0.5f).setDelay(0.3f).setEaseOutBack().setOnComplete(SetTitleScaleToStartScale);
+            rightAttachment.GetComponent<RectTransform>().LeanMoveX(400f, 0.5f).setDelay(0.3f).setEaseOutBack();
         }
     }
     private void SetTitleScaleToStartScale()
     {
         if (title != null)
         {
-            title.LeanScale(new Vector3(1f, 1f, 1f), 0.3f).setEaseOutQuart().setOnStart(SetPlayButtonScaleToStartScale);
+            title.LeanScale(new Vector3(1f, 1f, 1f), 0.3f).setDelay(1f).setEaseOutQuart();
         }
     }
     private void SetPlayButtonScaleToStartScale()
     {
         if (playButton != null)
         {
-            playButton.LeanScale(new Vector3(1f, 1f, 1f), 0.3f).setDelay(0.3f).setEaseOutBounce();
+            playButton.LeanScale(new Vector3(1f, 1f, 1f), 0.3f).setDelay(1.2f).setEaseOutBounce();
+        }
+    }
+    private void SetShopButtonToStartScale()
+    {
+        if (shopButton != null)
+        {
+            shopButton.LeanScale(new Vector3(1f, 1f, 1f), 0.3f).setDelay(1.3f).setEaseOutBounce();
         }
     }
 
@@ -64,6 +85,13 @@ public class MainMenuAnimation : MonoBehaviour
         if (mainMenuPanel != null)
         {
             mainMenuPanel.GetComponent<RectTransform>().LeanMoveX(-900f, 0.2f).setEaseInBack();
+        }
+    }
+    private void MoveMainMenuPanelRight()
+    {
+        if (mainMenuPanel != null)
+        {
+            mainMenuPanel.GetComponent<RectTransform>().LeanMoveX(900f, 0.2f).setEaseInBack();
         }
     }
     private void MoveDifficultySelectionPanelLeft()
@@ -84,9 +112,9 @@ public class MainMenuAnimation : MonoBehaviour
     public void BackButton_OnClick()
     {
         MoveDifficultySelectionPanelRight();
-        MoveMainMenuPanelRight();
+        MoveMainMenuPanelToStart();
     }
-    private void MoveMainMenuPanelRight()
+    private void MoveMainMenuPanelToStart()
     {
         if (mainMenuPanel != null)
         {
@@ -111,5 +139,11 @@ public class MainMenuAnimation : MonoBehaviour
     public void DifficultyButton_OnClick()
     {
         difficultySelectionPanel.GetComponent<RectTransform>().LeanMoveX(900f, 0.2f).setEaseInBack();
+    }
+
+    public void ShopButton_OnClick()
+    {
+        MoveMainMenuPanelRight();
+        shopPanel.GetComponent<RectTransform>().LeanMoveX(0f, 0.2f).setDelay(0.2f).setEaseOutBack();
     }
 }
