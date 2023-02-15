@@ -18,7 +18,7 @@ public class DifficultySelector : MonoBehaviour
     public void SelectDifficulty()
     {
 
-        GameSettings.DifficultySetting = difficulty;
+        LevelSettings.difficultySetting = difficulty;
         SceneManager.LoadScene(sceneName);
     }
 }

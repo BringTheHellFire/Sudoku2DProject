@@ -151,7 +151,7 @@ public class SudokuGenerator
 
         List<Tuple<int,int>> values = GetValues();
 
-        int FilledFields = Mathf.Max(81 - GameSettings.DifficultySetting * 10,0);
+        int FilledFields = Mathf.Max(81 - LevelSettings.difficultySetting * 10,0);
         /*
         if (GameSettings.DifficultySetting == 1) { FilledFields = 71; }
         if (GameSettings.DifficultySetting == 2) { FilledFields = 61; }

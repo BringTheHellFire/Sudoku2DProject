@@ -17,7 +17,7 @@ public class VictoryRewardManager : MonoBehaviour
 
     private void GiveVictoryReward()
     {
-        playerInfo.coinAmount += rewardAmount;
+        playerInfo.coinAmount += rewardAmount * LevelSettings.difficultySetting;
     }
 
 }

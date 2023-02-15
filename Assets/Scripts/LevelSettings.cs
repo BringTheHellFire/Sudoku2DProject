@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameSettings
+public class LevelSettings
 {
-    public static int DifficultySetting = 3;
+    public static int difficultySetting = 3;
 }
