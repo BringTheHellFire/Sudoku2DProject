@@ -850,6 +850,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3849647610896448723, guid: 3b49999e5514f21418a639a3a71dd7ed, type: 3}
   m_PrefabInstance: {fileID: 5642949172015612067}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &821870318 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5305931318253325800, guid: 75877157437da824aa8af40c17179b6d, type: 3}
+  m_PrefabInstance: {fileID: 8591623291259335109}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &891776423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8591623290904861794, guid: 75877157437da824aa8af40c17179b6d, type: 3}
@@ -1260,7 +1265,7 @@ PrefabInstance:
       objectReference: {fileID: 2010628451}
     - target: {fileID: 478398186265285964, guid: 5398a2be3d4bcf74ba2e8abdb027fe21, type: 3}
       propertyPath: textFieldsToChange.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 478398186265285964, guid: 5398a2be3d4bcf74ba2e8abdb027fe21, type: 3}
       propertyPath: textFieldsToChange.Array.data[0]
@@ -1269,10 +1274,22 @@ PrefabInstance:
     - target: {fileID: 478398186265285964, guid: 5398a2be3d4bcf74ba2e8abdb027fe21, type: 3}
       propertyPath: textFieldsToChange.Array.data[1]
       value: 
-      objectReference: {fileID: 5642949172015612069}
+      objectReference: {fileID: 186314786}
+    - target: {fileID: 478398186265285964, guid: 5398a2be3d4bcf74ba2e8abdb027fe21, type: 3}
+      propertyPath: textFieldsToChange.Array.data[2]
+      value: 
+      objectReference: {fileID: 307036187}
+    - target: {fileID: 478398186265285964, guid: 5398a2be3d4bcf74ba2e8abdb027fe21, type: 3}
+      propertyPath: textFieldsToChange.Array.data[3]
+      value: 
+      objectReference: {fileID: 2064873863}
+    - target: {fileID: 478398186265285964, guid: 5398a2be3d4bcf74ba2e8abdb027fe21, type: 3}
+      propertyPath: textFieldsToChange.Array.data[4]
+      value: 
+      objectReference: {fileID: 2064873863}
     - target: {fileID: 478398186265285964, guid: 5398a2be3d4bcf74ba2e8abdb027fe21, type: 3}
       propertyPath: panelTextFieldsToChange.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 478398186265285964, guid: 5398a2be3d4bcf74ba2e8abdb027fe21, type: 3}
       propertyPath: panelTextFieldsToChange.Array.data[0]
@@ -1282,6 +1299,10 @@ PrefabInstance:
       propertyPath: panelTextFieldsToChange.Array.data[1]
       value: 
       objectReference: {fileID: 5642949172015612069}
+    - target: {fileID: 478398186265285964, guid: 5398a2be3d4bcf74ba2e8abdb027fe21, type: 3}
+      propertyPath: panelTextFieldsToChange.Array.data[2]
+      value: 
+      objectReference: {fileID: 8251833574680100046}
     - target: {fileID: 478398186265285965, guid: 5398a2be3d4bcf74ba2e8abdb027fe21, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1784,6 +1805,10 @@ PrefabInstance:
       propertyPath: fieldSpawner
       value: 
       objectReference: {fileID: 1051019930}
+    - target: {fileID: 5274866175222003474, guid: 98170deef8603f545ad0f1862a11ec43, type: 3}
+      propertyPath: rewardMessage
+      value: 
+      objectReference: {fileID: 8251833574680100046}
     - target: {fileID: 5274866175222003475, guid: 98170deef8603f545ad0f1862a11ec43, type: 3}
       propertyPath: m_Name
       value: RewardGiver
@@ -2055,6 +2080,10 @@ PrefabInstance:
       propertyPath: fieldSpawner
       value: 
       objectReference: {fileID: 1051019930}
+    - target: {fileID: 927776981399350654, guid: 1014001529d1b85469059233fdf035dc, type: 3}
+      propertyPath: powerUpPanel
+      value: 
+      objectReference: {fileID: 821870318}
     - target: {fileID: 927776981399350654, guid: 1014001529d1b85469059233fdf035dc, type: 3}
       propertyPath: exitScreenPanel
       value: 
@@ -2406,6 +2435,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8251833574680100046 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4336453827398548843, guid: 367bffa136047104d95b8e670179bedf, type: 3}
+  m_PrefabInstance: {fileID: 8251833574680100042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &8591623291259335109

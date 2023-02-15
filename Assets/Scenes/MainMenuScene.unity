@@ -725,77 +725,81 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShopPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 453356652777269986, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 453356653706261995, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 453356653706261995, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 453356653706261995, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 453356653706261995, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 453356653706261995, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 453356653706261995, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -444
       objectReference: {fileID: 0}
     - target: {fileID: 548794470425053190, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 548794470425053190, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 548794470425053190, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 548794470425053190, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 548794470425053190, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 548794470425053190, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -944
       objectReference: {fileID: 0}
     - target: {fileID: 1222138439615680457, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1222138439615680457, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1222138439615680457, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 1222138439615680457, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1222138439615680457, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1222138439615680457, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -694
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc7576aef4b178940aad36f0c062b470, type: 3}
@@ -1274,6 +1278,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5086611944079011969, guid: 16fd6268afe25fb41b14dcfbebb39883, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7322249928054670104, guid: 16fd6268afe25fb41b14dcfbebb39883, type: 3}
       propertyPath: m_Name
       value: StartMenuPanel
@@ -1366,6 +1374,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1608187337}
+    - target: {fileID: 8570384128477225792, guid: 16fd6268afe25fb41b14dcfbebb39883, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1225
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16fd6268afe25fb41b14dcfbebb39883, type: 3}
 --- !u!1 &7322249928871948211 stripped
