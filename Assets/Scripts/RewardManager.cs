@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VictoryRewardManager : MonoBehaviour
+public class RewardManager : MonoBehaviour
 {
     [SerializeField] private FieldSpawning fieldSpawner;
 
