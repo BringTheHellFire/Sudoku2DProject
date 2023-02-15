@@ -23,7 +23,6 @@ public class MainMenuAnimation : MonoBehaviour
 
     [SerializeField] private GameObject leftAttachment;
     [SerializeField] private GameObject rightAttachment;
-
     
     [SerializeField] private List<GameObject> buttonsToScale;
 
@@ -34,8 +33,6 @@ public class MainMenuAnimation : MonoBehaviour
 
     private void Awake()
     {
-        ChangeToThemeColors();
-
         leftAttachment.GetComponent<RectTransform>().anchoredPosition = new Vector3(-550f, 50f, 0f);
         rightAttachment.GetComponent<RectTransform>().anchoredPosition = new Vector3(1100f, 50f, 0f);
 
@@ -47,29 +44,7 @@ public class MainMenuAnimation : MonoBehaviour
         
         themesHolder.transform.localScale = new Vector3(0f, 0f, 0f);
 
-        ThemeListDisplayUI.themeChanged.AddListener(ChangeToThemeColors);
-
         themesHolder.SetActive(false);
-    }
-
-    private void ChangeToThemeColors()
-    {
-        background.GetComponent<SpriteRenderer>().color = playerInfo.selectedTheme.backgroundColor;
-
-        var buttons = FindObjectsOfType<Button>();
-
-        foreach (var button in buttons)
-        {
-            var buttonColors = button.colors;
-            buttonColors.normalColor = playerInfo.selectedTheme.buttonColor;
-            buttonColors.highlightedColor = playerInfo.selectedTheme.buttonHighlightedColor;
-            buttonColors.pressedColor = playerInfo.selectedTheme.buttonPressedColor;
-            buttonColors.selectedColor = playerInfo.selectedTheme.buttonSelectedColor;
-            button.colors = buttonColors;
-            button.gameObject.GetComponentInChildren<TextMeshProUGUI>().color = playerInfo.selectedTheme.textColor;
-        }
-
-        title.GetComponent<TextMeshProUGUI>().color = playerInfo.selectedTheme.textColor;
     }
 
     private void Start()
