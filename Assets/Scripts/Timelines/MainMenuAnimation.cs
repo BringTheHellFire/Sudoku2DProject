@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class MainMenuAnimation : MonoBehaviour
 {
+    [SerializeField] private Theme selectedTheme;
+
+    [SerializeField] private GameObject background;
+
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject difficultySelectionPanel;
     [SerializeField] private GameObject shopPanel;
@@ -25,9 +30,24 @@ public class MainMenuAnimation : MonoBehaviour
         leftAttachment.GetComponent<RectTransform>().anchoredPosition = new Vector3(-550f, 50f, 0f);
         rightAttachment.GetComponent<RectTransform>().anchoredPosition = new Vector3(1100f, 50f, 0f);
 
+        background.GetComponent<SpriteRenderer>().color = selectedTheme.backgroundColor;
+
+        var buttons = FindObjectsOfType<Button>();
+
+        foreach (var button in buttons)
+        {
+            button.gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
+            var buttonColors = button.colors;
+            buttonColors.normalColor = selectedTheme.buttonColor;
+            buttonColors.highlightedColor = selectedTheme.buttonHighlightedColor;
+            buttonColors.pressedColor = selectedTheme.buttonPressedColor;
+            buttonColors.selectedColor = selectedTheme.buttonSelectedColor;
+            button.colors = buttonColors;
+            button.gameObject.GetComponentInChildren<TextMeshProUGUI>().color = selectedTheme.textColor;
+        }
+
         title.transform.localScale = new Vector3(0f, 0f, 0f);
-        playButton.transform.localScale = new Vector3(0f, 0f, 0f);
-        shopButton.transform.localScale = new Vector3(0f, 0f, 0f);
+        title.GetComponent<TextMeshProUGUI>().color = selectedTheme.textColor;
     }
 
     private void Start()

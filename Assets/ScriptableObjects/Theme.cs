@@ -10,5 +10,7 @@ public class Theme : ScriptableObject
     public Color backgroundColor;
     public Color textColor;
     public Color buttonColor;
+    public Color buttonHighlightedColor;
     public Color buttonPressedColor;
+    public Color buttonSelectedColor;
 }
