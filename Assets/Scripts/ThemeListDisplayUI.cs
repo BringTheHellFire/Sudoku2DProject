@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ThemeListDisplayUI : MonoBehaviour
@@ -32,8 +33,10 @@ public class ThemeListDisplayUI : MonoBehaviour
         }
     }
 
+    public static UnityEvent themeChanged = new UnityEvent();
     private void ChangeTheme(int themeIndex)
     {
         playerInfo.selectedTheme = themes[themeIndex];
+        themeChanged.Invoke();
     }
 }

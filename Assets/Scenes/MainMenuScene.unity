@@ -815,6 +815,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 717948756}
     - target: {fileID: 503560527539037033, guid: 2a6c65ac9ddca46428e956bd9dc97129, type: 3}
+      propertyPath: playerInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 6211fc154113c284c8b5d6da89eed879, type: 2}
+    - target: {fileID: 503560527539037033, guid: 2a6c65ac9ddca46428e956bd9dc97129, type: 3}
       propertyPath: rightCloud
       value: 
       objectReference: {fileID: 824818801}

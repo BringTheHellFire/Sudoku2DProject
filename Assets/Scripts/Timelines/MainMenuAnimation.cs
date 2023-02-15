@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class MainMenuAnimation : MonoBehaviour
 {
-    [SerializeField] private Theme selectedTheme;
+    [SerializeField] private PlayerInfo playerInfo;
 
     [SerializeField] private GameObject background;
 
@@ -34,29 +34,40 @@ public class MainMenuAnimation : MonoBehaviour
 
     private void Awake()
     {
+        ChangeToThemeColors();
+
         leftAttachment.GetComponent<RectTransform>().anchoredPosition = new Vector3(-550f, 50f, 0f);
         rightAttachment.GetComponent<RectTransform>().anchoredPosition = new Vector3(1100f, 50f, 0f);
 
-        background.GetComponent<SpriteRenderer>().color = selectedTheme.backgroundColor;
+        playButton.gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
+        shopButton.gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
+        optionsButton.gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
+
+        title.transform.localScale = new Vector3(0f, 0f, 0f);
+        
+        themesHolder.transform.localScale = new Vector3(0f, 0f, 0f);
+
+        ThemeListDisplayUI.themeChanged.AddListener(ChangeToThemeColors);
+    }
+
+    private void ChangeToThemeColors()
+    {
+        background.GetComponent<SpriteRenderer>().color = playerInfo.selectedTheme.backgroundColor;
 
         var buttons = FindObjectsOfType<Button>();
 
         foreach (var button in buttons)
         {
-            button.gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
             var buttonColors = button.colors;
-            buttonColors.normalColor = selectedTheme.buttonColor;
-            buttonColors.highlightedColor = selectedTheme.buttonHighlightedColor;
-            buttonColors.pressedColor = selectedTheme.buttonPressedColor;
-            buttonColors.selectedColor = selectedTheme.buttonSelectedColor;
+            buttonColors.normalColor = playerInfo.selectedTheme.buttonColor;
+            buttonColors.highlightedColor = playerInfo.selectedTheme.buttonHighlightedColor;
+            buttonColors.pressedColor = playerInfo.selectedTheme.buttonPressedColor;
+            buttonColors.selectedColor = playerInfo.selectedTheme.buttonSelectedColor;
             button.colors = buttonColors;
-            button.gameObject.GetComponentInChildren<TextMeshProUGUI>().color = selectedTheme.textColor;
+            button.gameObject.GetComponentInChildren<TextMeshProUGUI>().color = playerInfo.selectedTheme.textColor;
         }
 
-        title.transform.localScale = new Vector3(0f, 0f, 0f);
-        title.GetComponent<TextMeshProUGUI>().color = selectedTheme.textColor;
-
-        themesHolder.transform.localScale = new Vector3(0f, 0f, 0f);
+        title.GetComponent<TextMeshProUGUI>().color = playerInfo.selectedTheme.textColor;
     }
 
     private void Start()
