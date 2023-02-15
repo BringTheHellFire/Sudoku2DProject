@@ -14,7 +14,19 @@ public class ThemeListDisplayUI : MonoBehaviour
 
     [SerializeField] private PlayerInfo playerInfo;
 
+    private List<GameObject> instancedThemes = new List<GameObject>();
+
+    private void OnEnable()
+    {
+        SetThemeButtonColors();
+    }
+
     private void Start()
+    {
+        SpawnThemeHolders();
+    }
+
+    private void SpawnThemeHolders()
     {
         for (int i = 0; i < themes.Count; i++)
         {
@@ -29,7 +41,20 @@ public class ThemeListDisplayUI : MonoBehaviour
             themeInstance.GetComponent<Button>().colors = buttonColors;
             int themeIndex = i;
             themeInstance.GetComponent<Button>().onClick.AddListener(() => ChangeTheme(themeIndex));
-            themeInstance.LeanScale(new Vector3(1f, 1f, 1f), 0.4f).setDelay(0.3f).setEaseOutQuart();
+            instancedThemes.Add(themeInstance);
+        }
+    }
+    private void SetThemeButtonColors()
+    {
+        for (int i = 0; i < instancedThemes.Count; i++)
+        {
+            instancedThemes[i].GetComponentInChildren<TextMeshProUGUI>().color = themes[i].textColor;
+            var buttonColors = instancedThemes[i].GetComponent<Button>().colors;
+            buttonColors.normalColor = themes[i].buttonColor;
+            buttonColors.highlightedColor = themes[i].buttonHighlightedColor;
+            buttonColors.pressedColor = themes[i].buttonPressedColor;
+            buttonColors.selectedColor = themes[i].buttonSelectedColor;
+            instancedThemes[i].GetComponent<Button>().colors = buttonColors;
         }
     }
 
@@ -38,5 +63,7 @@ public class ThemeListDisplayUI : MonoBehaviour
     {
         playerInfo.selectedTheme = themes[themeIndex];
         themeChanged.Invoke();
+        SetThemeButtonColors();
     }
+
 }

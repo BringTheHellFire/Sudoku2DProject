@@ -48,6 +48,8 @@ public class MainMenuAnimation : MonoBehaviour
         themesHolder.transform.localScale = new Vector3(0f, 0f, 0f);
 
         ThemeListDisplayUI.themeChanged.AddListener(ChangeToThemeColors);
+
+        themesHolder.SetActive(false);
     }
 
     private void ChangeToThemeColors()
@@ -204,6 +206,7 @@ public class MainMenuAnimation : MonoBehaviour
     public void OptionsButton_OnClick()
     {
         MoveMainMenuPanelToDown();
+        themesHolder.SetActive(true);
         optionsPanel.GetComponent<RectTransform>().LeanMoveY(0f, 0.2f).setDelay(0.2f).setEaseOutBack();
         themesHolder.LeanScale(new Vector3(1f, 1f, 1f), 0.4f).setDelay(0.2f).setEaseOutQuart();
         optionsBackButton.LeanScale(new Vector3(1f, 1f, 1f), 0.3f).setEaseOutBack();
@@ -227,6 +230,7 @@ public class MainMenuAnimation : MonoBehaviour
         optionsBackButton.LeanScale(new Vector3(0f, 0f, 0f), 0.3f).setEaseInBack();
         optionsPanel.GetComponent<RectTransform>().LeanMoveY(1900f, 0.2f).setEaseInBack();
         themesHolder.LeanScale(new Vector3(0f, 0f, 0f), 0.2f).setEaseInQuart();
+        themesHolder.SetActive(false);
         MoveMainMenuPanelToUp();
     }
 }
